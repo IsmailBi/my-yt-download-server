@@ -34,14 +34,12 @@ COPY --from=builder /app/package.json ./package.json
 COPY --from=builder /app/public ./public
 # If you are using the App Router in Next.js 13/14:
 COPY --from=builder /app/app ./app
-# If you are using the Pages Router (e.g., for pages/api):
-COPY --from=builder /app/pages ./pages
+# REMOVE THIS LINE:
+# COPY --from=builder /app/pages ./pages
 
 
-# --- Port Configuration (Addresses your Render issue directly) ---
-# Tell the Next.js app to listen on port 5000 *inside the container*
+# --- Port Configuration ---
 ENV PORT=5000
-# Inform Docker that the container will listen on port 5000
 EXPOSE 5000
 
 # Command to start the Next.js production server
