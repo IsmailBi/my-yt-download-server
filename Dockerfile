@@ -39,10 +39,10 @@ COPY --from=builder /app/pages ./pages
 
 
 # --- Port Configuration (Addresses your Render issue directly) ---
-# Tell the Next.js app to listen on port 10000 *inside the container*
-ENV PORT=10000
-# Inform Docker that the container will listen on port 10000
-EXPOSE 10000
+# Tell the Next.js app to listen on port 5000 *inside the container*
+ENV PORT=5000
+# Inform Docker that the container will listen on port 5000
+EXPOSE 5000
 
 # Command to start the Next.js production server
 CMD ["npm", "start"]
